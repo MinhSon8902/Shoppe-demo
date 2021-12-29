@@ -7,6 +7,7 @@
   --header-height: 120px;
   --navbar-height: 34px;
   --header-with-search: calc(var(--header-height) - var(--navbar-height));
+  --star-gold-color: #ffce3e;
 }
 
 * {
@@ -33,6 +34,26 @@ html {
 .grid__row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.gird__column-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 16.67%;
+}
+
+.grid__column-2-4 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+}
+
+.gird__column-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 83.33%;
 }
 
 @keyframes fadeIn {
@@ -89,10 +110,11 @@ html {
   padding: 0 12px;
   cursor: pointer;
   color: var(--text-color);
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   line-height: 1.6rem;
+  background-color: var(--white-color);
 }
 
 .btn.btn--normal:hover {
@@ -114,4 +136,91 @@ html {
   height: 32px;
   font-size: 12px;
   padding: 0 8px;
+}
+
+.select-input {
+  position: relative;
+  min-width: 200px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 2%);
+  z-index: 1;
+}
+
+.select-input:hover .select-input__list {
+  display: block;
+}
+
+.select-input__list {
+  position: absolute;
+  list-style: none;
+  left: 0;
+  right: 0;
+  top: 27px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  padding: 8px 16px;
+  display: none;
+  animation: fadeIn ease-in 0.1s;
+}
+
+.select-input__link {
+  display: block;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  padding: 4px 0px;
+}
+
+.select-input__link:hover {
+  color: var(--primary-color);
+}
+
+.select-input__label {
+  font-size: 1.4rem;
+}
+
+.select-input__icon {
+  font-size: 1.4rem;
+  position: relative;
+  color: rgb(131, 131, 131);
+  top: 1px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+  justify-content: center;
+}
+
+.pagination-items {
+  margin: 0 13px;
+}
+
+.pagination-items__links {
+  display: block;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #939393;
+  height: 30px;
+  min-width: 40px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+}
+
+.pagination-items--active .pagination-items__links:hover {
+  background-color: #ed5c3f;
+}
+
+.pagination-items--active .pagination-items__links {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
