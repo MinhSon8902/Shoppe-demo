@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/grid.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -29,15 +31,11 @@
   <body>
     <div class="app">
       <header class="header">
-        <div class="grid">
-          <nav class="header__navbar">
+        <div class="grid wide">
+          <nav class="header__navbar hidden-on-mobile-tablet">
             <ul class="header__navbar-list">
               <li
-                class="
-                  header__navbar-item
-                  header__navbar-item--has-qr
-                  header__navbar-item--separate
-                "
+                class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate"
               >
                 Vào cửa hàng trên ứng dụng F8-Shop
                 <div class="header__qr">
@@ -151,9 +149,7 @@
                 >
               </li>
               <li
-                class="
-                  header__navbar-item header__navbar-item--has-header__language
-                "
+                class="header__navbar-item header__navbar-item--has-header__language"
               >
                 <a href="" class="header__navbar-item-link"
                   ><i class="fas fa-globe header__navbar-icon"></i>Tiếng Việt<i
@@ -197,10 +193,7 @@
                     <a href="">Đơn mua</a>
                   </li>
                   <li
-                    class="
-                      header__navbar-user-items
-                      header__navbar-user-items--separate
-                    "
+                    class="header__navbar-user-items header__navbar-user-items--separate"
                   >
                     <a href="">Đăng xuất</a>
                   </li>
@@ -223,7 +216,10 @@
             </ul>
           </nav>
           <div class="header-with-search">
-            <div class="header__logo">
+            <label for="mobile-search-checkbox" class="header__mobile-search">
+              <i class="header__mobile-search-icon fas fa-search"></i>
+            </label>
+            <div class="header__logo hidden-on-tablet">
               <a href="#" class="header__logo-link">
                 <svg viewBox="0 0 192 65" class="header__logo-img">
                   <g fill-rule="evenodd">
@@ -235,6 +231,13 @@
                 </svg>
               </a>
             </div>
+            <input
+              type="checkbox"
+              hidden
+              name=""
+              id="mobile-search-checkbox"
+              class="header__search-checkbox"
+            />
             <div class="header__search">
               <div class="header__search-input-wrap">
                 <input
@@ -261,10 +264,7 @@
                 ><i class="header__search-select-icon fas fa-angle-down"></i>
                 <ul class="header__search-select-option">
                   <li
-                    class="
-                      header__search-select-option-items
-                      header__search-select-option-items-active
-                    "
+                    class="header__search-select-option-items header__search-select-option-items-active"
                   >
                     <span>Trong shop</span>
                     <i class="fas fa-check"></i>
@@ -386,11 +386,25 @@
             </div>
           </div>
         </div>
+        <ul class="header__soft-bar">
+          <li class="header__soft-item">
+            <a href="" class="header__soft-link">Liên quan</a>
+          </li>
+          <li class="header__soft-item header__soft-item--active">
+            <a href="" class="header__soft-link">Mới nhất</a>
+          </li>
+          <li class="header__soft-item">
+            <a href="" class="header__soft-link">Bán chạy</a>
+          </li>
+          <li class="header__soft-item">
+            <a href="" class="header__soft-link">Giá</a>
+          </li>
+        </ul>
       </header>
       <div class="app__container">
-        <div class="grid">
-          <div class="grid__row app__content">
-            <div class="gird__column-2">
+        <div class="grid wide">
+          <div class="row sm-gutter app__content">
+            <div class="col l-2 m-0 c-0">
               <nav class="category">
                 <h3 class="category__heading">Danh Mục</h3>
                 <ul class="category-list">
@@ -412,8 +426,8 @@
                 </ul>
               </nav>
             </div>
-            <div class="gird__column-10">
-              <div class="home-filter">
+            <div class="col l-10 m-12 c-12">
+              <div class="home-filter hidden-on-mobile-tablet">
                 <span class="home-filter__label">Sắp xếp theo</span>
                 <button class="btn home-filter__btn">Phổ Biến</button>
                 <button class="btn btn--primary home-filter__btn">
@@ -454,9 +468,43 @@
                   </div>
                 </div>
               </div>
+              <nav class="mobile-category">
+                <ul class="mobile-category__list">
+                  <li class="mobile-category__item">
+                    <a href="" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị</a
+                    >
+                  </li>
+                </ul>
+              </nav>
               <div class="home-product">
-                <div class="grid__row">
-                  <div class="grid__column-2-4">
+                <div class="row sm-gutter">
+                  <div class="col l-2-4 m-4 c-6">
                     <a class="home-product-items" href="#">
                       <div
                         class="home-product-items__img"
@@ -481,23 +529,13 @@
                       </div>
                       <div class="home-product-items__action">
                         <span
-                          class="
-                            home-product-items__like home-product-items--liked
-                          "
+                          class="home-product-items__like home-product-items--liked"
                         >
                           <i
-                            class="
-                              home-product-items__like-icon-fill
-                              fas
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-fill fas fa-heart"
                           ></i>
                           <i
-                            class="
-                              home-product-items__like-icon-empty
-                              far
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-empty far fa-heart"
                           ></i>
                         </span>
                         <div class="home-product-items__rating">
@@ -537,7 +575,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="grid__column-2-4">
+                  <div class="col l-2-4 m-4 c-6">
                     <a class="home-product-items" href="#">
                       <div
                         class="home-product-items__img"
@@ -562,23 +600,13 @@
                       </div>
                       <div class="home-product-items__action">
                         <span
-                          class="
-                            home-product-items__like home-product-items--liked
-                          "
+                          class="home-product-items__like home-product-items--liked"
                         >
                           <i
-                            class="
-                              home-product-items__like-icon-fill
-                              fas
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-fill fas fa-heart"
                           ></i>
                           <i
-                            class="
-                              home-product-items__like-icon-empty
-                              far
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-empty far fa-heart"
                           ></i>
                         </span>
                         <div class="home-product-items__rating">
@@ -618,7 +646,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="grid__column-2-4">
+                  <div class="col l-2-4 m-4 c-6">
                     <a class="home-product-items" href="#">
                       <div
                         class="home-product-items__img"
@@ -643,23 +671,13 @@
                       </div>
                       <div class="home-product-items__action">
                         <span
-                          class="
-                            home-product-items__like home-product-items--liked
-                          "
+                          class="home-product-items__like home-product-items--liked"
                         >
                           <i
-                            class="
-                              home-product-items__like-icon-fill
-                              fas
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-fill fas fa-heart"
                           ></i>
                           <i
-                            class="
-                              home-product-items__like-icon-empty
-                              far
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-empty far fa-heart"
                           ></i>
                         </span>
                         <div class="home-product-items__rating">
@@ -699,7 +717,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="grid__column-2-4">
+                  <div class="col l-2-4 m-4 c-6">
                     <a class="home-product-items" href="#">
                       <div
                         class="home-product-items__img"
@@ -724,23 +742,13 @@
                       </div>
                       <div class="home-product-items__action">
                         <span
-                          class="
-                            home-product-items__like home-product-items--liked
-                          "
+                          class="home-product-items__like home-product-items--liked"
                         >
                           <i
-                            class="
-                              home-product-items__like-icon-fill
-                              fas
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-fill fas fa-heart"
                           ></i>
                           <i
-                            class="
-                              home-product-items__like-icon-empty
-                              far
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-empty far fa-heart"
                           ></i>
                         </span>
                         <div class="home-product-items__rating">
@@ -780,7 +788,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="grid__column-2-4">
+                  <div class="col l-2-4 m-4 c-6">
                     <a class="home-product-items" href="#">
                       <div
                         class="home-product-items__img"
@@ -805,23 +813,368 @@
                       </div>
                       <div class="home-product-items__action">
                         <span
-                          class="
-                            home-product-items__like home-product-items--liked
-                          "
+                          class="home-product-items__like home-product-items--liked"
                         >
                           <i
-                            class="
-                              home-product-items__like-icon-fill
-                              fas
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-fill fas fa-heart"
                           ></i>
                           <i
-                            class="
-                              home-product-items__like-icon-empty
-                              far
-                              fa-heart
-                            "
+                            class="home-product-items__like-icon-empty far fa-heart"
+                          ></i>
+                        </span>
+                        <div class="home-product-items__rating">
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="home-product-items__sold">88 đã bán</span>
+                      </div>
+                      <div class="home-product-items__origin">
+                        <span class="home-product-items__brand">Whoo</span>
+                        <span class="home-product-items__origin-name"
+                          >Ninh Bình</span
+                        >
+                      </div>
+                      <div class="home-product-items__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                      <div class="home-product-items__sale-off">
+                        <span class="home-product-items__sale-off-percent"
+                          >68%</span
+                        >
+                        <span class="home-product-items__sale-off-lable"
+                          >GIẢM</span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col l-2-4 m-4 c-6">
+                    <a class="home-product-items" href="#">
+                      <div
+                        class="home-product-items__img"
+                        style="
+                          background-image: url(https://cf.shopee.vn/file/a0f9d321f072278e3a1f21d9776f38ee);
+                        "
+                      ></div>
+                      <h4 class="home-product-items__name">
+                        [Mã 2712ELSALE hoàn 7% xu đơn 300k] Bàn phím cơ giá rẻ
+                        Dareu EK87 | Hàng chính hãng lỗi 1 đổi 1
+                      </h4>
+                      <div class="home-product-items__price">
+                        <span class="home-product-items__price-old"
+                          >1.200.000đ</span
+                        >
+                        <span class="home-product-items__price-new"
+                          >999.999đ</span
+                        >
+                        <span class="home-product-items__freeship">
+                          <i class="fas fa-shipping-fast"></i>
+                        </span>
+                      </div>
+                      <div class="home-product-items__action">
+                        <span
+                          class="home-product-items__like home-product-items--liked"
+                        >
+                          <i
+                            class="home-product-items__like-icon-fill fas fa-heart"
+                          ></i>
+                          <i
+                            class="home-product-items__like-icon-empty far fa-heart"
+                          ></i>
+                        </span>
+                        <div class="home-product-items__rating">
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="home-product-items__sold">88 đã bán</span>
+                      </div>
+                      <div class="home-product-items__origin">
+                        <span class="home-product-items__brand">Whoo</span>
+                        <span class="home-product-items__origin-name"
+                          >Ninh Bình</span
+                        >
+                      </div>
+                      <div class="home-product-items__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                      <div class="home-product-items__sale-off">
+                        <span class="home-product-items__sale-off-percent"
+                          >68%</span
+                        >
+                        <span class="home-product-items__sale-off-lable"
+                          >GIẢM</span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col l-2-4 m-4 c-6">
+                    <a class="home-product-items" href="#">
+                      <div
+                        class="home-product-items__img"
+                        style="
+                          background-image: url(https://cf.shopee.vn/file/a0f9d321f072278e3a1f21d9776f38ee);
+                        "
+                      ></div>
+                      <h4 class="home-product-items__name">
+                        [Mã 2712ELSALE hoàn 7% xu đơn 300k] Bàn phím cơ giá rẻ
+                        Dareu EK87 | Hàng chính hãng lỗi 1 đổi 1
+                      </h4>
+                      <div class="home-product-items__price">
+                        <span class="home-product-items__price-old"
+                          >1.200.000đ</span
+                        >
+                        <span class="home-product-items__price-new"
+                          >999.999đ</span
+                        >
+                        <span class="home-product-items__freeship">
+                          <i class="fas fa-shipping-fast"></i>
+                        </span>
+                      </div>
+                      <div class="home-product-items__action">
+                        <span
+                          class="home-product-items__like home-product-items--liked"
+                        >
+                          <i
+                            class="home-product-items__like-icon-fill fas fa-heart"
+                          ></i>
+                          <i
+                            class="home-product-items__like-icon-empty far fa-heart"
+                          ></i>
+                        </span>
+                        <div class="home-product-items__rating">
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="home-product-items__sold">88 đã bán</span>
+                      </div>
+                      <div class="home-product-items__origin">
+                        <span class="home-product-items__brand">Whoo</span>
+                        <span class="home-product-items__origin-name"
+                          >Ninh Bình</span
+                        >
+                      </div>
+                      <div class="home-product-items__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                      <div class="home-product-items__sale-off">
+                        <span class="home-product-items__sale-off-percent"
+                          >68%</span
+                        >
+                        <span class="home-product-items__sale-off-lable"
+                          >GIẢM</span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col l-2-4 m-4 c-6">
+                    <a class="home-product-items" href="#">
+                      <div
+                        class="home-product-items__img"
+                        style="
+                          background-image: url(https://cf.shopee.vn/file/a0f9d321f072278e3a1f21d9776f38ee);
+                        "
+                      ></div>
+                      <h4 class="home-product-items__name">
+                        [Mã 2712ELSALE hoàn 7% xu đơn 300k] Bàn phím cơ giá rẻ
+                        Dareu EK87 | Hàng chính hãng lỗi 1 đổi 1
+                      </h4>
+                      <div class="home-product-items__price">
+                        <span class="home-product-items__price-old"
+                          >1.200.000đ</span
+                        >
+                        <span class="home-product-items__price-new"
+                          >999.999đ</span
+                        >
+                        <span class="home-product-items__freeship">
+                          <i class="fas fa-shipping-fast"></i>
+                        </span>
+                      </div>
+                      <div class="home-product-items__action">
+                        <span
+                          class="home-product-items__like home-product-items--liked"
+                        >
+                          <i
+                            class="home-product-items__like-icon-fill fas fa-heart"
+                          ></i>
+                          <i
+                            class="home-product-items__like-icon-empty far fa-heart"
+                          ></i>
+                        </span>
+                        <div class="home-product-items__rating">
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="home-product-items__sold">88 đã bán</span>
+                      </div>
+                      <div class="home-product-items__origin">
+                        <span class="home-product-items__brand">Whoo</span>
+                        <span class="home-product-items__origin-name"
+                          >Ninh Bình</span
+                        >
+                      </div>
+                      <div class="home-product-items__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                      <div class="home-product-items__sale-off">
+                        <span class="home-product-items__sale-off-percent"
+                          >68%</span
+                        >
+                        <span class="home-product-items__sale-off-lable"
+                          >GIẢM</span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col l-2-4 m-4 c-6">
+                    <a class="home-product-items" href="#">
+                      <div
+                        class="home-product-items__img"
+                        style="
+                          background-image: url(https://cf.shopee.vn/file/a0f9d321f072278e3a1f21d9776f38ee);
+                        "
+                      ></div>
+                      <h4 class="home-product-items__name">
+                        [Mã 2712ELSALE hoàn 7% xu đơn 300k] Bàn phím cơ giá rẻ
+                        Dareu EK87 | Hàng chính hãng lỗi 1 đổi 1
+                      </h4>
+                      <div class="home-product-items__price">
+                        <span class="home-product-items__price-old"
+                          >1.200.000đ</span
+                        >
+                        <span class="home-product-items__price-new"
+                          >999.999đ</span
+                        >
+                        <span class="home-product-items__freeship">
+                          <i class="fas fa-shipping-fast"></i>
+                        </span>
+                      </div>
+                      <div class="home-product-items__action">
+                        <span
+                          class="home-product-items__like home-product-items--liked"
+                        >
+                          <i
+                            class="home-product-items__like-icon-fill fas fa-heart"
+                          ></i>
+                          <i
+                            class="home-product-items__like-icon-empty far fa-heart"
+                          ></i>
+                        </span>
+                        <div class="home-product-items__rating">
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i
+                            class="home-product-items__star--gold fas fa-star"
+                          ></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="home-product-items__sold">88 đã bán</span>
+                      </div>
+                      <div class="home-product-items__origin">
+                        <span class="home-product-items__brand">Whoo</span>
+                        <span class="home-product-items__origin-name"
+                          >Ninh Bình</span
+                        >
+                      </div>
+                      <div class="home-product-items__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                      <div class="home-product-items__sale-off">
+                        <span class="home-product-items__sale-off-percent"
+                          >68%</span
+                        >
+                        <span class="home-product-items__sale-off-lable"
+                          >GIẢM</span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col l-2-4 m-4 c-6">
+                    <a class="home-product-items" href="#">
+                      <div
+                        class="home-product-items__img"
+                        style="
+                          background-image: url(https://cf.shopee.vn/file/a0f9d321f072278e3a1f21d9776f38ee);
+                        "
+                      ></div>
+                      <h4 class="home-product-items__name">
+                        [Mã 2712ELSALE hoàn 7% xu đơn 300k] Bàn phím cơ giá rẻ
+                        Dareu EK87 | Hàng chính hãng lỗi 1 đổi 1
+                      </h4>
+                      <div class="home-product-items__price">
+                        <span class="home-product-items__price-old"
+                          >1.200.000đ</span
+                        >
+                        <span class="home-product-items__price-new"
+                          >999.999đ</span
+                        >
+                        <span class="home-product-items__freeship">
+                          <i class="fas fa-shipping-fast"></i>
+                        </span>
+                      </div>
+                      <div class="home-product-items__action">
+                        <span
+                          class="home-product-items__like home-product-items--liked"
+                        >
+                          <i
+                            class="home-product-items__like-icon-fill fas fa-heart"
+                          ></i>
+                          <i
+                            class="home-product-items__like-icon-empty far fa-heart"
                           ></i>
                         </span>
                         <div class="home-product-items__rating">
@@ -898,9 +1251,9 @@
         </div>
       </div>
       <footer class="footer">
-        <div class="grid">
-          <div class="grid__row">
-            <div class="grid__column-2-4">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
@@ -916,7 +1269,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">VỀ SHOPEE</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
@@ -934,10 +1287,10 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">THANH TOÁN</h3>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
@@ -960,7 +1313,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-8 c-12">
               <h3 class="footer__heading">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
               <div class="footer__download">
                 <img
@@ -987,53 +1340,11 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="footer__bottom">
-          <div class="grid footer__bottom-items">
-            <p class="footer__text">
-              © 2021 Shopee. Tất cả các quyền được bảo lưu.
-            </p>
-            <div class="footer__nation">
-              <span class="footer__nation-text">Quốc gia & Khu vực:</span>
-              <div class="footer__nation-country">
-                <a href="#">Singapore</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Indonesia</a>
-              </div class="footer__nation-country">
-              <div class="footer__nation-country">
-                <a href="#">Đài Loan</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Thái Lan</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Malaysia</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Việt Nam</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Philippines</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Brazil</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">México</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Chile</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Colombia</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Poland</a>
-              </div>
-              <div class="footer__nation-country">
-                <a href="#">Spain</a>
-              </div>
+          <div class="footer__bottom">
+            <div class="footer__bottom-items">
+              <p class="footer__text">
+                © 2021 Shopee. Tất cả các quyền được bảo lưu.
+              </p>
             </div>
           </div>
         </div>
